@@ -42,11 +42,11 @@ yarn-error.log*
 # Project specific - ChromaDB vector database
 chroma_db/
 
-# Project specific - OneNote processing pipeline
-onenote/raw/          # Personal documents (sensitive)
-onenote/processed/    # Can be regenerated
-onenote/chunked/      # Can be regenerated
-onenote/embedded/     # Can be regenerated
+# Project specific - OneNote processing pipeline  
+onenote/raw/
+onenote/processed/
+onenote/chunked/
+onenote/embeddings/
 
 # Docker
 .dockerignore
