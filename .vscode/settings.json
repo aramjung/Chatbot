@@ -1,0 +1,8 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/myenv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": true,
+    "files.associations": {
+        "*.dockerignore": "ignore",
+        ".dockerignore": "ignore"
+    }
+}

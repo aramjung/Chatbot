@@ -1,0 +1,54 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Pipeline",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/onenote/scripts/run_pipeline.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/onenote/scripts",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Debug Backend API",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "app:app",
+                "--reload",
+                "--host",
+                "127.0.0.1",
+                "--port",
+                "5000"
+            ],
+            "cwd": "${workspaceFolder}/backend",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "python": "${workspaceFolder}/myenv/Scripts/python.exe"
+        },
+        {
+            "name": "Debug Frontend",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/frontend/src",
+            "sourceMaps": true,
+            "preLaunchTask": "npm: start"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Debug Full Stack",
+            "configurations": [
+                "Debug Backend API",
+                "Debug Frontend"
+            ],
+            "stopAll": true
+        }
+    ]
+}
